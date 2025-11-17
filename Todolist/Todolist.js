@@ -1,5 +1,5 @@
 function addTask() {
-    let taskText = document.getElementById("taskInput").value.trim();
+    let taskText = document.getElementById("taskInput").value;
     if (!taskText) return;
   
     let li = document.createElement("li");

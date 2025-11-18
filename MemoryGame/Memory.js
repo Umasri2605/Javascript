@@ -18,7 +18,6 @@ var generateCards = () => {
         cardsArray.push(card);
     });
 };
-
 var flipCard = (event) => {
     var card = event.target;
 
@@ -60,6 +59,5 @@ var resetGame = () => {
     cardsArray = [];
     generateCards();
 };
-
 generateCards();
 resetButton.addEventListener('click', resetGame);

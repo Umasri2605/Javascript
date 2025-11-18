@@ -58,6 +58,7 @@ h1 {
     background: #fff;
     transform: rotateY(180deg);
 }
+
 #board, .card {
     transform: none !important;
     rotate: 0deg !important;

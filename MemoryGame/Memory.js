@@ -4,10 +4,9 @@ var cardsArray = [];
 var flippedCards = [];
 var matchedCards = 0;
 
-// Generate the cards
 var generateCards = () => {
     var values = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-    var shuffledValues = [...values, ...values].sort(() => Math.random() - 0.5); // Shuffle the cards
+    var shuffledValues = [...values, ...values].sort(() => Math.random() - 0.5);
 
     shuffledValues.forEach(value => {
         var card = document.createElement('div');
@@ -20,7 +19,6 @@ var generateCards = () => {
     });
 };
 
-// Flip the card            
 var flipCard = (event) => {
     var card = event.target;
 
@@ -35,7 +33,6 @@ var flipCard = (event) => {
     }
 };
 
-// Check if the flipped cards match
 var checkMatch = () => {
     var [firstCard, secondCard] = flippedCards;
 
@@ -43,9 +40,7 @@ var checkMatch = () => {
         matchedCards += 2;
         flippedCards = [];
         if (matchedCards === cardsArray.length) {
-            setTimeout(() => {
-                alert('You won!');
-            }, 500);
+            setTimeout(() => alert('You Won 🎉'), 400);
         }
     } else {
         setTimeout(() => {
@@ -54,11 +49,10 @@ var checkMatch = () => {
             firstCard.classList.remove('flipped');
             secondCard.classList.remove('flipped');
             flippedCards = [];
-        }, 1000);
+        }, 800);
     }
 };
 
-// Reset the game
 var resetGame = () => {
     flippedCards = [];
     matchedCards = 0;
@@ -67,8 +61,5 @@ var resetGame = () => {
     generateCards();
 };
 
-// Initialize the game
 generateCards();
-
-// Reset button event
 resetButton.addEventListener('click', resetGame);
